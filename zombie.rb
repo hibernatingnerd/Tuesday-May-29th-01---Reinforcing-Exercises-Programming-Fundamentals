@@ -76,7 +76,7 @@ def self.spawn
 end
 
 # @@horde << zombie
-# a class method increase_plague_level
+# a class method calling on @@plague level increase_plague_level
 def self.increase_plague_level
   @@plague_level += rand(0..2)
   return @@plague_level
