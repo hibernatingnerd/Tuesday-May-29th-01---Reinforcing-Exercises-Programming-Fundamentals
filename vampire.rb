@@ -1,4 +1,4 @@
-require"pry"
+
 class Vampire
 
 # class variables
@@ -23,9 +23,8 @@ class Vampire
     @drank_blood_today
   end
   def drank_blood_today=(val)
-    @drank_blood_today
+    @drank_blood_today = (val)
   end
-
 
   def drink_blood
     @drank_blood_today = true
@@ -34,12 +33,12 @@ class Vampire
   def go_home
     @in_coffin = true
   end
-#class methods
+    # class methods
 
   def self.sunrise
     @deletethese = []
     @@coven.each do |vamp|
-      if !((vamp.drank_blood_today) || (vamp.in_coffin))
+      if !vamp.drank_blood_today || !vamp.in_coffin
         @deletethese << vamp
       end
     end
@@ -69,5 +68,10 @@ class Vampire
   end
 end
 
-
-  binding.pry
+puts Vampire.create
+puts Vampire.create
+puts Vampire.create
+puts Vampire.all
+puts Vampire.sunrise
+puts "ff"
+puts Vampire.all
